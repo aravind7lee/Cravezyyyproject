@@ -11,13 +11,15 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Verify from './pages/Verify/Verify';
 import MealPlanner from './components/MealPlanner/MealPlanner';
-import StoreContextProvider from './context/StoreContext'; // Import StoreContextProvider
+import { StoreContext } from './Context/StoreContext';
+
+
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
 
   return (
-    <StoreContextProvider> {/* Wrap the entire app with the StoreContextProvider */}
+    <StoreContext> {/* Wrap the entire app with the StoreContextProvider */}
       <ToastContainer />
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : null} {/* Updated to use `null` */}
       <div className="app">
@@ -32,7 +34,7 @@ const App = () => {
         </Routes>
       </div>
       <Footer />
-    </StoreContextProvider> 
+    </StoreContext>
   );
 };
 
