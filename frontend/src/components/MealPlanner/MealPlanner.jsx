@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { StoreContext } from 'context/StoreContext';  // Using the alias defined in Vite config
+import StoreContext from 'context/StoreContext'; // Ensure this path is correct  // Using the alias defined in Vite config
 import './MealPlanner.css';
 
 const MealPlanner = () => {
